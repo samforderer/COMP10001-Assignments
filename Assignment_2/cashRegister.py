@@ -7,6 +7,7 @@ amount = random.randint(0,20) + round( random.randint( 0, 100) /100 , 2 )
 print("You owe: $",amount)
 
 # take input from user for payment and round to nearest nickel 
+# ASSUME valid input is a float that is > than amount
 payment = float(input("How much are you paying?: "))
 payment = round(payment / 0.05) * 0.05
 
