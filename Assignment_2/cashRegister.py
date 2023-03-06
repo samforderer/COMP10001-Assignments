@@ -13,7 +13,7 @@ payment = round(payment / 0.05) * 0.05
 
 # calculate change and round to nearest nickel
 change = round(round(payment - amount, 2) / 0.05) * 0.05
-
+change = round(change, 2) 
 if(change > 0):
     d = 0
     q = 0
@@ -22,16 +22,21 @@ if(change > 0):
 
     d = int(change)
     change = round(change - d, 2)
-    print('owed: ', change)
+    print(change)
     if(change > 0):
+        print(change)
         q = int(change // 0.25)
         change = change - (q * 0.25)  
-
+        
+        print(change)
         i = int(change // 0.10)
         change = change - (i * 0.10)
 
+        print(change)
         n = int(change // 0.05)
         change = change - (n * 0.05)
+        
+        print(change)
 
     print("You got ", d, "dollars, ", q, "quarters, ", i, "dimes and", n, "nickels back in change")
 else:
